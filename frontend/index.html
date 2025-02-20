@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+    </div>
+    <div class="container">
+        <img src="logo.png" alt="Logo" class="logo">
+        <h1>Welcome to the ICT Quiz App</h1>
+        <form id="quizForm">
+            <label for="level">Choose a Level:</label>
+            <select id="level" name="level">
+                <option value="4">Level 4 (Normal)</option>
+                <option value="5">Level 5 (Medium)</option>
+                <option value="6">Level 6 (Hard)</option>
+            </select>
+            <button type="button" id="startQuizButton">Start Quiz</button>
+        </form>
+        <div id="quizContainer" style="display:none;">
+            <div id="progressBarContainer">
+                <div id="progressBar"></div>
+            </div>
+            <h2 id="question"></h2>
+            <p>Time Left: <span id="timer">30</span>s</p>
+            <div id="optionsContainer">
+                <!-- Options will be dynamically added here as clickable cards -->
+            </div>
+            <p id="feedback" aria-live="polite"></p>
+            <div class="button-group">
+                <button id="skipQuestionButton">Skip Question</button>
+            </div>
+        </div>
+        <div id="roundEnd" style="display:none;">
+            <h2>Round Completed!</h2>
+            <p>You have finished Round <span id="currentRoundDisplay"></span>.</p>
+            <p>Your current score is <span id="currentScore"></span>/<span id="totalQuestions"></span>.</p>
+            <div class="button-group">
+                <button id="continueQuizButton">Continue to Next Round</button>
+                <button id="cancelQuizButton">Cancel Quiz</button>
+            </div>
+        </div>
+        <div id="result" style="display:none;">
+            <h2>Quiz Completed!</h2>
+            <p>Your final score is <span id="finalScore"></span>/30</p>
+            <p>Rating: <span id="rating"></span>/10</p>
+            <div id="correction">
+                <h3>Corrections:</h3>
+                <ul id="correctionList"></ul>
+            </div>
+            <div id="suggestions">
+                <h3>Suggestions for Improvement:</h3>
+                <p id="suggestionText"></p>
+            </div>
+            <div class="button-group">
+                <button id="goHomeButton">Go Home</button>
+                <button id="chooseAnotherLevelButton">Choose Another Level</button>
+                <button id="restartQuizButton">Restart Quiz</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; Created by ICT 6-2 (2024/2025)
+    </footer>
+    <div id="celebration" class="celebration"></div>
+    <script src="script.js"></script>
+</body>
+</html>
